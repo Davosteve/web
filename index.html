@@ -27,7 +27,18 @@
             <a href="#"><img src="images/twitter.png"></a>
         </div>
     </div>
-
+  <div id="contact" class="section">
+  <div>
+    <h2>Contacto</h2>
+    <p>Instagram / correo / redes</p>
+  </div>
+</div>
+<div id="about" class="section">
+  <div>
+    <h2>Sobre mí</h2>
+    <p>Fotógrafo macro y biólogo enfocado en artrópodos y comportamiento.</p>
+  </div>
+</div>
     <!-- GALERÍA -->
     <div class="gallery">
 
@@ -74,3 +85,36 @@
 </div>
 
 <script src="script.js"></script>
+  
+function showSection(id){
+  document.querySelectorAll('.section').forEach(sec=>{
+    sec.classList.remove('active');
+  });
+  document.getElementById(id).classList.add('active');
+}
+
+// LIGHTBOX SIMPLE
+const imgs = document.querySelectorAll('.gallery img');
+const lightbox = document.getElementById('lightbox');
+const lightImg = document.getElementById('lightbox-img');
+const closeBtn = document.getElementById('close-btn');
+
+imgs.forEach(img=>{
+  img.addEventListener('click',()=>{
+    lightbox.style.display='flex';
+    lightImg.src = img.src;
+  });
+});
+
+closeBtn.onclick = ()=>{
+  lightbox.style.display='none';
+};
+
+lightbox.onclick = (e)=>{
+  if(e.target===lightbox) lightbox.style.display='none';
+};
+
+</script>
+
+</body>
+</html>
