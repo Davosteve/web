@@ -89,6 +89,21 @@ lightbox.onclick = (e)=>{
 
   document.getElementById(id).classList.add('active');
 }
+const sections = document.querySelectorAll('.section');
+const links = document.querySelectorAll('#header-menu a');
+
+function showSection(id){
+  sections.forEach(sec => sec.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+}
+
+links.forEach(link=>{
+  link.addEventListener('click', (e)=>{
+    e.preventDefault(); // 🔥 ESTO EVITA EL SCROLL
+    const section = link.dataset.section;
+    showSection(section);
+  });
+});
 
 </body>
 </html>
