@@ -104,4 +104,14 @@ body {
     text-align: center;
     padding: 20px;
 }
+#lightbox {
+    flex-direction: column;
+}
 
+#lightbox-caption {
+    color: #ccc;
+    margin-top: 15px;
+    font-family: 'Cinzel', serif;
+    letter-spacing: 2px;
+    font-size: 14px;
+}
