@@ -1,7 +1,9 @@
 body {
-  margin: 0;
-  background: black;
-  color: white;
+    margin: 0;
+    background: #0f0f0f;
+    color: #eaeaea;
+    font-family: Arial;
+}
   font-family: Arial, sans-serif;
 }
 
@@ -130,5 +132,5 @@ body {
 #footer {
   text-align: center;
   padding: 20px;
-}
+
 }
