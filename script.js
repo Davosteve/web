@@ -1,30 +1,26 @@
 document.addEventListener("DOMContentLoaded", () => {
-
   /* =========================
-     SPA NAVIGATION
+     SPA
   ========================= */
+  const sections = document.querySelectorAll(".section");
+  const navLinks = document.querySelectorAll("#header-menu a");
 
-  const sections = document.querySelectorAll('.section');
-  const links = document.querySelectorAll('#header-menu a');
-
-  function showSection(id){
-    sections.forEach(sec => sec.classList.remove('active'));
+  function showSection(id) {
+    sections.forEach(sec => sec.classList.remove("active"));
     const target = document.getElementById(id);
-    if (target) target.classList.add('active');
+    if (target) target.classList.add("active");
   }
 
-  links.forEach(link => {
-    link.addEventListener('click', (e) => {
-      e.preventDefault(); // 🔥 evita scroll
-      const section = link.dataset.section;
-      showSection(section);
+  navLinks.forEach(link => {
+    link.addEventListener("click", (e) => {
+      e.preventDefault();
+      showSection(link.dataset.section);
     });
   });
 
   /* =========================
      LIGHTBOX
   ========================= */
-
   const images = document.querySelectorAll(".gallery-item img");
   const lightbox = document.getElementById("lightbox");
   const lightboxImg = document.getElementById("lightbox-img");
@@ -33,23 +29,29 @@ document.addEventListener("DOMContentLoaded", () => {
 
   let currentIndex = 0;
 
-  function showImage() {
+  function openLightbox(index) {
+    currentIndex = index;
     const img = images[currentIndex];
     lightboxImg.src = img.src;
-    caption.textContent = img.getAttribute("data-title") || "";
+    caption.textContent = img.dataset.title || "";
+    lightbox.classList.add("active");
+  }
+
+  function updateLightbox() {
+    const img = images[currentIndex];
+    lightboxImg.src = img.src;
+    caption.textContent = img.dataset.title || "";
+  }
+
+  function closeLightbox() {
+    lightbox.classList.remove("active");
+    lightboxImg.src = "";
+    caption.textContent = "";
   }
 
   images.forEach((img, index) => {
-    img.addEventListener("click", () => {
-      currentIndex = index;
-      showImage();
-      lightbox.classList.add("active");
-    });
+    img.addEventListener("click", () => openLightbox(index));
   });
-
-  function closeLightbox(){
-    lightbox.classList.remove("active");
-  }
 
   closeBtn.addEventListener("click", (e) => {
     e.stopPropagation();
@@ -65,12 +67,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
     if (e.key === "ArrowRight") {
       currentIndex = (currentIndex + 1) % images.length;
-      showImage();
+      updateLightbox();
     }
 
     if (e.key === "ArrowLeft") {
       currentIndex = (currentIndex - 1 + images.length) % images.length;
-      showImage();
+      updateLightbox();
     }
 
     if (e.key === "Escape") {
@@ -78,4 +80,5 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
+  showSection("macro");
 });
