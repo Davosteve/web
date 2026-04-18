@@ -2,59 +2,76 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>David Estevez</title>
   <link rel="stylesheet" href="style.css">
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&display=swap" rel="stylesheet">
 </head>
 
 <body>
-  <div id="wrapper">
 
+<div id="wrapper">
+
+    <!-- HEADER -->
     <div id="header">
-      <h1>David Estevez</h1>
+        <h1>David Estevez</h1>
 
       <ul id="header-menu">
-        <li><a href="#">Macro</a></li>
-        <li><a href="#">Sobre mí</a></li>
-        <li><a href="#">Contacto</a></li>
-      </ul>
+    <li><a href="#macro">Macro</a></li>
+    <li><a href="#about">Sobre mí</a></li>
+    <li><a href="#contact">Contacto</a></li>
+</ul>
+        </ul>
 
-      <div id="social-menu">
-        <a href="#"><img src="images/insta.png" alt="Instagram"></a>
-        <a href="#"><img src="images/twitter.png" alt="Twitter"></a>
-      </div>
+        <div id="social-menu">
+            <a href="#"><img src="images/insta.png"></a>
+            <a href="#"><img src="images/twitter.png"></a>
+        </div>
     </div>
-
+  <div id="contact" class="section">
+</div>
+    <!-- GALERÍA -->
     <div class="gallery">
-      <div class="gallery-item">
-        <img src="Mexigonusahh.jpg" data-title="Mexigonus sp" alt="Mexigonus sp">
-      </div>
 
-      <div class="gallery-item">
-        <img src="Ceranbycidaei ig-2.jpg" data-title="Cerambycidae" alt="Cerambycidae">
-      </div>
+        <div class="gallery-item">
+            <img src="Mexigonusahh.jpg" data-title="Mexigonus sp">
+        </div>
 
-      <div class="gallery-item">
-        <img src="images/img3.jpg" data-title="Imagen 3" alt="Imagen 3">
-      </div>
+        <div class="gallery-item">
+            <img src="Ceranbycidaei ig-2.jpg" data-title="Cerambycidae">
+        </div>
 
-      <div class="gallery-item">
-        <img src="images/img4.jpg" data-title="Imagen 4" alt="Imagen 4">
-      </div>
+        <div class="gallery-item">
+            <img src="3.jpg" data-title="Misumenops">
+        </div>
+
+        <div class="gallery-item"> 
+            <img src="4.jpg" data-title="Tegenaria Domestica">
+        </div>
+
+        <div class="gallery-item">
+            <img src="2.jpg" data-title="Menemerus bivittatus">
+        </div>
+
+        <div class="gallery-item">
+            <img src="1.jpg" data-title="Corythalia Spiralis">
+        </div>
+
     </div>
 
+    <!-- FOOTER -->
     <div id="footer">
-      © 2026 David Estevez
+        © 2026 David Estevez
     </div>
-  </div>
 
-  <div id="lightbox">
-    <span id="close-btn">&times;</span>
-    <img id="lightbox-img" alt="">
+</div>
+
+<!-- LIGHTBOX -->
+
+<div id="lightbox">
+    <img id="lightbox-img">
     <p id="lightbox-caption"></p>
-  </div>
+   <span id="close-btn">&times;</span>
+    <img id="lightbox-img">
+</div>
 
-  <script src="script.js"></script>
-</body>
-</html>
+<script src="script.js"></script>
