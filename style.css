@@ -17,7 +17,11 @@ body {
 }
 
 #header h1 {
-    margin: 0;
+    font-family: 'Cinzel', serif !important;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    font-size: 28px;
+    color: white;
 }
 
 /* MENU */
@@ -32,8 +36,10 @@ body {
 }
 
 #header-menu a {
-    color: white;
-    text-decoration: none;
+    font-family: 'Cinzel', serif !important;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    font-size: 12px;
 }
 
 /* SOCIAL */
