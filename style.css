@@ -66,10 +66,11 @@ body {
   position: absolute;
   inset: 0;
   display: none;
-  justify-content: center;
-  align-items: center;
-  padding-top: 90px;
+  justify-content: flex-start; /* 🔥 antes center */
+  align-items: flex-start;     /* 🔥 antes center */
+  padding-top: 120px;
   box-sizing: border-box;
+}
 }
 
 .section.active {
