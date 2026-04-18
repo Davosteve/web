@@ -1,40 +1,44 @@
 const images = document.querySelectorAll(".gallery-item img");
 const lightbox = document.getElementById("lightbox");
 const lightboxImg = document.getElementById("lightbox-img");
+const caption = document.getElementById("lightbox-caption");
 
-images.forEach(img => {
+let currentIndex = 0;
+
+// abrir imagen
+images.forEach((img, index) => {
     img.addEventListener("click", () => {
+        currentIndex = index;
+        showImage();
         lightbox.style.display = "flex";
-        lightboxImg.src = img.src;
     });
 });
 
+// mostrar imagen
+function showImage() {
+    const img = images[currentIndex];
+    lightboxImg.src = img.src;
+    caption.textContent = img.dataset.title || "";
+}
+
+// click para cerrar
 lightbox.addEventListener("click", () => {
     lightbox.style.display = "none";
 });
-/* NOMBRE */
-#header h1 {
-    font-family: 'Cinzel', serif;
-    text-transform: uppercase;
-    letter-spacing: 4px;
-    font-size: 28px;
-}
 
-/* MENÚ */
-#header-menu a {
-    font-family: 'Cinzel', serif;
-    text-transform: uppercase;
-    letter-spacing: 3px;
-    font-size: 12px;
-}
-#lightbox {
-    flex-direction: column;
-}
-
-#lightbox-caption {
-    color: #ccc;
-    margin-top: 15px;
-    font-family: 'Cinzel', serif;
-    letter-spacing: 2px;
-    font-size: 14px;
-}
+// teclado ← →
+document.addEventListener("keydown", (e) => {
+    if (lightbox.style.display === "flex") {
+        if (e.key === "ArrowRight") {
+            currentIndex = (currentIndex + 1) % images.length;
+            showImage();
+        }
+        if (e.key === "ArrowLeft") {
+            currentIndex = (currentIndex - 1 + images.length) % images.length;
+            showImage();
+        }
+        if (e.key === "Escape") {
+            lightbox.style.display = "none";
+        }
+    }
+});
