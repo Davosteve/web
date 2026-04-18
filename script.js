@@ -5,31 +5,29 @@ const caption = document.getElementById("lightbox-caption");
 
 let currentIndex = 0;
 
-function openLightbox(index) {
-    currentIndex = index;
-    updateImage();
-    lightbox.style.display = "flex";
-}
+// abrir
+images.forEach((img, index) => {
+    img.addEventListener("click", () => {
+        currentIndex = index;
+        showImage();
+        lightbox.style.display = "flex";
+    });
+});
 
-function updateImage() {
+function showImage() {
     const img = images[currentIndex];
     lightboxImg.src = img.src;
     caption.textContent = img.getAttribute("data-title") || "";
 }
 
-images.forEach((img, index) => {
-    img.addEventListener("click", () => openLightbox(index));
-});
-
+// teclado PC
 document.addEventListener("keydown", (e) => {
     if (lightbox.style.display === "flex") {
         if (e.key === "ArrowRight") {
-            currentIndex = (currentIndex + 1) % images.length;
-            updateImage();
+            nextImage();
         }
         if (e.key === "ArrowLeft") {
-            currentIndex = (currentIndex - 1 + images.length) % images.length;
-            updateImage();
+            prevImage();
         }
         if (e.key === "Escape") {
             lightbox.style.display = "none";
@@ -37,6 +35,23 @@ document.addEventListener("keydown", (e) => {
     }
 });
 
-lightbox.addEventListener("click", () => {
-    lightbox.style.display = "none";
+// 👉 navegación con click (sirve en celular)
+lightbox.addEventListener("click", (e) => {
+    const x = e.clientX;
+
+    if (x > window.innerWidth / 2) {
+        nextImage(); // derecha
+    } else {
+        prevImage(); // izquierda
+    }
 });
+
+function nextImage() {
+    currentIndex = (currentIndex + 1) % images.length;
+    showImage();
+}
+
+function prevImage() {
+    currentIndex = (currentIndex - 1 + images.length) % images.length;
+    showImage();
+}
