@@ -5,40 +5,38 @@ const caption = document.getElementById("lightbox-caption");
 
 let currentIndex = 0;
 
-// abrir imagen
-images.forEach((img, index) => {
-    img.addEventListener("click", () => {
-        currentIndex = index;
-        showImage();
-        lightbox.style.display = "flex";
-    });
-});
-
-// mostrar imagen
-function showImage() {
-    const img = images[currentIndex];
-    lightboxImg.src = img.src;
-    caption.textContent = img.dataset.title || "";
+function openLightbox(index) {
+    currentIndex = index;
+    updateImage();
+    lightbox.style.display = "flex";
 }
 
-// click para cerrar
-lightbox.addEventListener("click", () => {
-    lightbox.style.display = "none";
+function updateImage() {
+    const img = images[currentIndex];
+    lightboxImg.src = img.src;
+    caption.textContent = img.getAttribute("data-title") || "";
+}
+
+images.forEach((img, index) => {
+    img.addEventListener("click", () => openLightbox(index));
 });
 
-// teclado ← →
 document.addEventListener("keydown", (e) => {
     if (lightbox.style.display === "flex") {
         if (e.key === "ArrowRight") {
             currentIndex = (currentIndex + 1) % images.length;
-            showImage();
+            updateImage();
         }
         if (e.key === "ArrowLeft") {
             currentIndex = (currentIndex - 1 + images.length) % images.length;
-            showImage();
+            updateImage();
         }
         if (e.key === "Escape") {
             lightbox.style.display = "none";
         }
     }
+});
+
+lightbox.addEventListener("click", () => {
+    lightbox.style.display = "none";
 });
