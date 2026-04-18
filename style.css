@@ -83,7 +83,7 @@ body {
 
 /* LIGHTBOX */
 #lightbox {
-    display: none;
+     display: none;
     position: fixed;
     top: 0;
     left: 0;
@@ -93,17 +93,21 @@ body {
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    cursor: pointer;
 }
 
 #lightbox-caption {
     color: #ccc;
     margin-top: 10px;
-}
+     color: #ccc;
+    margin-top: 15px;
+    font-size: 14px;
+    letter-spacing: 2px;
 }
 
 #lightbox img {
     max-width: 90%;
-    max-height: 90%;
+    max-height: 80%;
     color: #ccc;
     margin-top: 15px;
     font-family: 'Cinzel', serif;
