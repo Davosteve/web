@@ -104,3 +104,8 @@ body {
     text-align: center;
     padding: 20px;
 }
+a {
+    color: white !important;
+}body {
+    background: red !important;
+}
