@@ -1,63 +1,31 @@
-const images = document.querySelectorAll(".gallery-item img");
-const lightbox = document.getElementById("lightbox");
-const lightboxImg = document.getElementById("lightbox-img");
-const caption = document.getElementById("lightbox-caption");
+document.addEventListener("DOMContentLoaded", () => {
 
-let currentIndex = 0;
+    const images = document.querySelectorAll(".gallery-item img");
+    const lightbox = document.getElementById("lightbox");
+    const lightboxImg = document.getElementById("lightbox-img");
+    const caption = document.getElementById("lightbox-caption");
+    const closeBtn = document.getElementById("close-btn");
 
-// abrir
-images.forEach((img, index) => {
-    img.addEventListener("click", () => {
-        currentIndex = index;
-        showImage();
-        lightbox.style.display = "flex";
+    let currentIndex = 0;
+
+    images.forEach((img, index) => {
+        img.addEventListener("click", () => {
+            currentIndex = index;
+            showImage();
+            lightbox.style.display = "flex";
+        });
     });
-});
 
-function showImage() {
-    const img = images[currentIndex];
-    lightboxImg.src = img.src;
-    caption.textContent = img.getAttribute("data-title") || "";
-}
-
-// teclado PC
-document.addEventListener("keydown", (e) => {
-    if (lightbox.style.display === "flex") {
-        if (e.key === "ArrowRight") {
-            nextImage();
-        }
-        if (e.key === "ArrowLeft") {
-            prevImage();
-        }
-        if (e.key === "Escape") {
-            lightbox.style.display = "none";
-        }
+    function showImage() {
+        const img = images[currentIndex];
+        lightboxImg.src = img.src;
+        caption.textContent = img.getAttribute("data-title") || "";
     }
-});
 
-// 👉 navegación con click (sirve en celular)
-lightbox.addEventListener("click", (e) => {
-    if (e.target.id === "lightbox") {
+    // 🔥 BOTÓN X
+    closeBtn.addEventListener("click", (e) => {
+        e.stopPropagation(); // evita que cambie de imagen
         lightbox.style.display = "none";
-    }
-    if (x > window.innerWidth / 2) {
-        nextImage(); // derecha
-    } else {
-        prevImage(); // izquierda
-    }
-});
+    });
 
-function nextImage() {
-    currentIndex = (currentIndex + 1) % images.length;
-    showImage();
-}
-
-function prevImage() {
-    currentIndex = (currentIndex - 1 + images.length) % images.length;
-    showImage();
-}
-const closeBtn = document.getElementById("close-btn");
-
-closeBtn.addEventListener("click", () => {
-    lightbox.style.display = "none";
 });
