@@ -37,8 +37,9 @@ document.addEventListener("keydown", (e) => {
 
 // 👉 navegación con click (sirve en celular)
 lightbox.addEventListener("click", (e) => {
-    const x = e.clientX;
-
+    if (e.target.id === "lightbox") {
+        lightbox.style.display = "none";
+    }
     if (x > window.innerWidth / 2) {
         nextImage(); // derecha
     } else {
@@ -55,3 +56,8 @@ function prevImage() {
     currentIndex = (currentIndex - 1 + images.length) % images.length;
     showImage();
 }
+const closeBtn = document.getElementById("close-btn");
+
+closeBtn.addEventListener("click", () => {
+    lightbox.style.display = "none";
+});
