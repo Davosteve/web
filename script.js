@@ -27,3 +27,14 @@ lightbox.addEventListener("click", () => {
     letter-spacing: 3px;
     font-size: 12px;
 }
+#lightbox {
+    flex-direction: column;
+}
+
+#lightbox-caption {
+    color: #ccc;
+    margin-top: 15px;
+    font-family: 'Cinzel', serif;
+    letter-spacing: 2px;
+    font-size: 14px;
+}
