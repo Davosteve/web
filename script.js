@@ -1,6 +1,4 @@
-document.addEventListener("DOMContentLoaded", () => {
-
-  /* =========================
+ /* =========================
      LIGHTBOX (TU LÓGICA ORIGINAL)
   ========================= */
 
