@@ -28,6 +28,28 @@ html {
   color: white;
 }
 
+/* 🔥 ICONOS (ARREGLADO) */
+#social-icons {
+  margin: 25px
+}
+
+#social-icons a {
+  display: inline-block;
+  margin: 0 10px;
+}
+
+#social-icons img {
+  width: 34px;
+  opacity: 0.8;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+#social-icons img:hover {
+  opacity: 1;
+  transform: scale(1.15);
+}
+
+/* MENU */
 #header-menu {
   list-style: none;
   padding: 0;
@@ -64,7 +86,7 @@ html {
   display: none;
   width: min(1500px, calc(100% - 30px));
   margin: 0 auto;
-  padding: 20px 15px 60px;
+  padding: 40px 15px 60px;
 }
 
 .page.active {
@@ -75,7 +97,7 @@ html {
   max-width: 750px;
   margin: 0 auto;
   text-align: center;
-  padding: 60px 0;
+  padding: 80px 0;
 }
 
 .page-content h2 {
@@ -138,6 +160,7 @@ html {
   text-align: center;
 }
 
+/* CONTROLES */
 #close-btn,
 #prev-btn,
 #next-btn {
