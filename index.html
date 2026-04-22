@@ -3,74 +3,67 @@
 <head>
   <meta charset="UTF-8">
   <title>David Estevez</title>
-  <link rel="stylesheet" href="style.css">
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
 <div id="wrapper">
 
-    <!-- HEADER -->
-    <div id="header">
-        <h1>David Estevez</h1>
+  <div id="header">
+    <h1>David Estevez</h1>
 
-      <ul id="header-menu">
-    <li><a href="#macro">Macro</a></li>
-    <li><a href="#about">Sobre mí</a></li>
-    <li><a href="#contact">Contacto</a></li>
-</ul>
-        </ul>
+    <ul id="header-menu">
+      <li><a href="#" data-page="macro">Macro</a></li>
+      <li><a href="#" data-page="about">Sobre mí</a></li>
+      <li><a href="#" data-page="contact">Contacto</a></li>
+    </ul>
+  </div>
 
-        <div id="social-menu">
-            <a href="#"><img src="images/insta.png"></a>
-            <a href="#"><img src="images/twitter.png"></a>
-        </div>
-    </div>
-  <div id="contact" class="section">
-</div>
-    <!-- GALERÍA -->
-    <div class="gallery">
-
+  <div id="pages">
+    <div class="page active" id="macro">
+      <div class="gallery">
         <div class="gallery-item">
-            <img src="Mexigonusahh.jpg" data-title="Mexigonus sp">
+          <img src="Mexigonusahh.jpg" data-title="Mexigonus sp">
         </div>
 
         <div class="gallery-item">
-            <img src="Ceranbycidaei ig-2.jpg" data-title="Cerambycidae">
+          <img src="Ceranbycidaei_ig-2.jpg" data-title="Cerambycidae">
         </div>
 
         <div class="gallery-item">
-            <img src="3.jpg" data-title="Misumenops">
-        </div>
-
-        <div class="gallery-item"> 
-            <img src="4.jpg" data-title="Tegenaria Domestica">
+          <img src="3.jpg" data-title="Misumenops">
         </div>
 
         <div class="gallery-item">
-            <img src="2.jpg" data-title="Menemerus bivittatus">
+          <img src="4.jpg" data-title="Tegenaria domestica">
         </div>
 
         <div class="gallery-item">
-            <img src="1.jpg" data-title="Corythalia Spiralis">
+          <img src="2.jpg" data-title="Menemerus bivittatus">
         </div>
 
+        <div class="gallery-item">
+          <img src="1.jpg" data-title="Corythalia spiralis">
+        </div>
+      </div>
     </div>
 
-    <!-- FOOTER -->
-    <div id="footer">
-        © 2026 David Estevez
+    <div class="page" id="about">
+      <div class="page-content">
+        <h2>Sobre mí</h2>
+        <p>
+          Soy David Estevez, fotógrafo macro y estudiante de biología, enfocado en artrópodos y en mostrar detalles que normalmente pasan desapercibidos.
+        </p>
+      </div>
     </div>
 
-</div>
-
-<!-- LIGHTBOX -->
-
-<div id="lightbox">
-    <img id="lightbox-img">
-    <p id="lightbox-caption"></p>
-   <span id="close-btn">&times;</span>
-    <img id="lightbox-img">
-</div>
-<script src="script.js"></script>
+    <div class="page" id="contact">
+      <div class="page-content">
+        <h2>Contacto</h2>
+        <p>Instagram: @tuusuario</p>
+        <p>Email: tuemail@gmail.com</p>
+      </div>
+    </div>
+  </div>
