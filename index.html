@@ -12,21 +12,21 @@
 <div id="wrapper">
 
   <div id="header">
-   <h1>David Estevez</h1>
+    <h1>David Estevez</h1>
 
-<div id="social-icons">
-  <a href="https://www.instagram.com/davidestevez.macro/" target="_blank">
-    <img src="images/instagram.png" alt="Instagram">
-  </a>
+    <div id="social-icons">
+      <a href="https://www.instagram.com/davidestevez.macro/" target="_blank">
+        <img src="images/instagram.png" alt="Instagram">
+      </a>
 
-  <a href="https://www.inaturalist.org/people/davosteve" target="_blank">
-    <img src="images/inaturalist.png" alt="iNaturalist">
-  </a>
+      <a href="https://www.inaturalist.org/people/davosteve" target="_blank">
+        <img src="images/inaturalist.png" alt="iNaturalist">
+      </a>
 
-  <a href="https://www.youtube.com/@davosteve"_blank">
-    <img src="images/youtube.png" alt="YouTube">
-  </a>
-</div>
+      <a href="https://www.youtube.com/@davosteve" target="_blank">
+        <img src="images/youtube.png" alt="YouTube">
+      </a>
+    </div>
 
     <ul id="header-menu">
       <li><a href="#" data-page="macro">Macro</a></li>
@@ -57,11 +57,11 @@
         <div class="gallery-item">
           <img src="images/1.jpg" data-title="Corythalia spiralis">
         </div>
-        
+
         <div class="gallery-item">
           <img src="images/zygoballus-4.jpg" data-title="Zygoballus">
         </div>
-        
+
         <div class="gallery-item">
           <img src="images/2.jpg" data-title="Menemerus bivittatus hembra">
         </div>
@@ -73,25 +73,25 @@
         <div class="gallery-item">
           <img src="images/amycini-2.jpg" data-title="Amycus no descrita">
         </div>
-        
+
         <div class="gallery-item">
           <img src="images/web ruophriyini.jpg" data-title="Mexigonus sp">
         </div>
-        
+
         <div class="gallery-item">
           <img src="images/sidymella entrenubes ig-4.jpg" data-title="Sidymella badia">
         </div>
-        
+
         <div class="gallery-item">
           <img src="images/FIDENA.jpg" data-title="Fidena">
         </div>
-        
+
         <div class="gallery-item">
           <img src="images/lowmag.jpg" data-title="Atalopedes huron">
         </div>
 
         <div class="gallery-item">
-          <img src="images/h axyridis.jpg" data-title="Mariquita asiatica">
+          <img src="images/h axyridis.jpg" data-title="Mariquita asiática">
         </div>
       </div>
     </div>
@@ -100,16 +100,54 @@
       <div class="page-content">
         <h2>Sobre mí</h2>
         <p>
-          Soy David Estevez, fotógrafo macro y estudiante de biología, enfocado en artrópodos y en mostrar detalles que normalmente pasan desapercibidos.
+          Soy fotógrafo macro especializado en artrópodos, con un enfoque particular en los arácnidos.
+          Mi interés por este grupo comenzó al fotografiar arañas en un parque urbano, experiencia que despertó una profunda fascinación por la diversidad morfológica y ecológica de estos organismos.
+        </p>
+        <p>
+          Desde entonces, combino la fotografía y el estudio biológico para documentar y divulgar la importancia de los artrópodos en los ecosistemas.
+          Mediante imágenes detalladas, busco resaltar las formas, colores y comportamientos que muchas veces pasan desapercibidos, contribuyendo a la apreciación y comprensión de este mundo diminuto pero fundamental.
         </p>
       </div>
     </div>
 
     <div class="page" id="contact">
-      <div class="page-content">
+      <div class="page-content contact-box">
         <h2>Contacto</h2>
-        <p>Instagram: @tuusuario</p>
-        <p>Email: tuemail@gmail.com</p>
+
+        <p class="contact-text">
+          Completa el formulario de abajo si deseas ponerte en contacto o si tienes alguna consulta sobre trabajos, impresiones o proyectos. Te responderé lo antes posible.
+        </p>
+
+        <form class="contact-form" action="https://formspree.io/f/mrerrdqw" method="POST">
+          <div class="name-row">
+            <div class="field">
+              <label for="first-name">Nombre *</label>
+              <input type="text" id="first-name" name="first-name" placeholder="Nombre" required>
+            </div>
+
+            <div class="field">
+              <label for="last-name">Apellido *</label>
+              <input type="text" id="last-name" name="last-name" placeholder="Apellido" required>
+            </div>
+          </div>
+
+          <div class="field">
+            <label for="email">Correo electrónico *</label>
+            <input type="email" id="email" name="email" required>
+          </div>
+
+          <div class="field">
+            <label for="message">Comentario o mensaje *</label>
+            <textarea id="message" name="message" rows="7" required></textarea>
+          </div>
+
+          <input type="hidden" name="_captcha" value="false">
+          <input type="hidden" name="_subject" value="Nuevo mensaje desde el portafolio">
+
+          <button type="submit" class="submit-btn">Enviar</button>
+        </form>
+
+        <p id="form-status"></p>
       </div>
     </div>
   </div>
@@ -128,53 +166,7 @@
   <p id="lightbox-caption"></p>
 </div>
 
-  <div class="page" id="contact">
-  <div class="page-content contact-box">
-    <h2>Contacto</h2>
-
-    <p class="contact-text">
-      Completa el formulario de abajo si deseas ponerte en contacto o si tienes alguna consulta sobre trabajos, impresiones o proyectos. Te responderé lo antes posible.
-    </p>
-
-    <form class="contact-form" action="https://formspree.io/f/mrerrdqw" method="POST">
-
-      <div class="name-row">
-        <div class="field">
-          <label for="first-name">Nombre *</label>
-          <input type="text" id="first-name" name="first-name" placeholder="Nombre" required>
-        </div>
-
-        <div class="field">
-          <label for="last-name">&nbsp;</label>
-          <input type="text" id="last-name" name="last-name" placeholder="Apellido" required>
-        </div>
-      </div>
-
-      <div class="field">
-        <label for="email">Correo electrónico *</label>
-        <input type="email" id="email" name="email" required>
-      </div>
-
-      <div class="field">
-        <label for="message">Comentario o mensaje *</label>
-        <textarea id="message" name="message" rows="7" required></textarea>
-      </div>
-
-      <input type="hidden" name="_captcha" value="false">
-      <input type="hidden" name="_subject" value="Nuevo mensaje desde el portafolio">
-
-      <button type="submit" class="submit-btn">Enviar</button>
-    </form>
-
-    <p id="form-status"></p>
-
-    <div class="contact-logo">
-      <img src="images/logo.png" alt="Logo">
-    </div>
-  </div>
-</div>
 <script src="script.js"></script>
 
 </body>
 </html>
-
