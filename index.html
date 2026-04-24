@@ -128,6 +128,51 @@
   <p id="lightbox-caption"></p>
 </div>
 
+  <div class="page" id="contact">
+  <div class="page-content contact-box">
+    <h2>Contacto</h2>
+
+    <p class="contact-text">
+      Completa el formulario de abajo si deseas ponerte en contacto o si tienes alguna consulta sobre trabajos, impresiones o proyectos. Te responderé lo antes posible.
+    </p>
+
+    <form class="contact-form" action="https://formspree.io/f/mrerrdqw" method="POST">
+
+      <div class="name-row">
+        <div class="field">
+          <label for="first-name">Nombre *</label>
+          <input type="text" id="first-name" name="first-name" placeholder="Nombre" required>
+        </div>
+
+        <div class="field">
+          <label for="last-name">&nbsp;</label>
+          <input type="text" id="last-name" name="last-name" placeholder="Apellido" required>
+        </div>
+      </div>
+
+      <div class="field">
+        <label for="email">Correo electrónico *</label>
+        <input type="email" id="email" name="email" required>
+      </div>
+
+      <div class="field">
+        <label for="message">Comentario o mensaje *</label>
+        <textarea id="message" name="message" rows="7" required></textarea>
+      </div>
+
+      <input type="hidden" name="_captcha" value="false">
+      <input type="hidden" name="_subject" value="Nuevo mensaje desde el portafolio">
+
+      <button type="submit" class="submit-btn">Enviar</button>
+    </form>
+
+    <p id="form-status"></p>
+
+    <div class="contact-logo">
+      <img src="images/logo.png" alt="Logo">
+    </div>
+  </div>
+</div>
 <script src="script.js"></script>
 
 </body>
