@@ -83,3 +83,30 @@ document.addEventListener("DOMContentLoaded", () => {
 
   showPage("macro");
 });
+const form = document.querySelector(".contact-form");
+const status = document.getElementById("form-status");
+
+form.addEventListener("submit", async (e) => {
+  e.preventDefault();
+
+  const data = new FormData(form);
+
+  try {
+    const response = await fetch(form.action, {
+      method: "POST",
+      body: data,
+      headers: {
+        Accept: "application/json"
+      }
+    });
+
+    if (response.ok) {
+      status.textContent = "Mensaje enviado correctamente.";
+      form.reset();
+    } else {
+      status.textContent = "No se pudo enviar el mensaje.";
+    }
+  } catch (error) {
+    status.textContent = "Ocurrió un error al enviar el formulario.";
+  }
+});
